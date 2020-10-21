@@ -1,0 +1,42 @@
+a{
+	color: red;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+h1{
+	font-family: helvetica, sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+h2.lead{
+	font-size: 24px;
+	background-color: #333333;
+	color: #ff0000;
+}
+
+#terceiro{
+	color: green;
+}
+
+#quarto{
+	color: blue;
+}
+
+#ligacao{
+	color: #333333;
+}
+
+#alteracor{
+	color: yellow;
+}
+
+.ligacao{
+	font-size: 12px;
+	text-decoration: underline;
+}

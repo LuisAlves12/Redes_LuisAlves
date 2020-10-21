@@ -1,0 +1,70 @@
+body{
+	background-color: black;
+	color: white;
+}
+.titulo{
+	text-align: center;
+	font-size: 50px;
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+
+.logo{
+	height: 250px;
+	width: 250px;
+}
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+.nomecarta{
+	text-align: center;
+}
+
+.fotocarta{
+	height: 400px;
+	width: 650px;
+}
+
+.contacto{
+	text-align: right;
+}
+
+.subtitulo{
+	text-align: center;
+}
+
+.imagemmaps{
+	height: 400px;
+	width: 600px;
+}
+
+.imagemtabela{
+	height: 400px;
+	width: 650px;
+}
+
+.fotopreco{
+	height: 550px;
+	width: 350px;
+}
+
+.tabelapreco{
+	width: auto;
+	height: auto;
+}
