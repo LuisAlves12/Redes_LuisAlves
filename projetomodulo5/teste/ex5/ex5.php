@@ -6,8 +6,10 @@
     </head>
     <body>
         <?php
-            $diasdasemana=array('domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado');
-            $meses=array('Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro');
+            $diasdasemana=array('domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira',
+            'sexta-feira','sábado');
+            $meses=array('Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro',
+            'Outubro','Novembro','Dezembro');
         ?>
         <form action="resultado.php" method="post">
             <select name="diadasemana">
