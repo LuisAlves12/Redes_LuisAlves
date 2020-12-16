@@ -10,7 +10,7 @@
             $nome=$_POST['txt_nome'];
             $datadenascimento=$_POST['txt_data'];
             $anonasc= date("Y", strtotime("$datadenascimento"));
-            $idade=2020 - $anonasc;
+            $idade= 2020 - $anonasc;
             echo "Você tem ".$idade." anos<br>";
             if($idade >=18){
                 echo "Ja tem idade para votar <br>";
