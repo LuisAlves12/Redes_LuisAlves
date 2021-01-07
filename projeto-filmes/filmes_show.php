@@ -58,4 +58,5 @@
     }
 ?>
 </body>
+<a href="filmes_edit.php">Editar</a>
 </html>
