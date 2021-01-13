@@ -44,19 +44,21 @@
 <?php
     if(isset($livro)){
         echo '<br>';
-        echo $livro['titulo'];
+        echo "Titulo: " .$livro['titulo'];
         echo '<br>';
-        echo $livro['sinopse'];
+        echo "Sinopse: " .$livro['sinopse'];
         echo '<br>';
-        echo $livro['data_lancamento'];
+        echo "Quantidade: " .$livro['quantidade'];
         echo '<br>';
-        echo $livro['quantidade'];
+        echo "Idioma: " .$livro['idioma'];
+        echo '<br>';
+        echo "Data Lançamento: " .$livro['data_lancamento'];
         echo '<br>';
     }
     else{
         echo '<h2>Parece que o filme selecionado não existe. <br>Confirme a sua seleção.</h2>';
     }
+    echo '<a href="filmes_edit.php?filme='.$livro['id_filme']. '">Editar Filme</a>';
 ?>
 </body>
-<a href="filmes_edit.php">Editar</a>
 </html>

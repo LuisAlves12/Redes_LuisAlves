@@ -12,19 +12,19 @@
         }
 
         if(isset($_POST['sinopse'])){
-            $titulo = $_POST['sinopse'];
+            $sinopse = $_POST['sinopse'];
         }
 
         if(isset($_POST['quantidade']) && is_numeric($_POST['quantidade'])){
-            $titulo = $_POST['quantidade'];
+            $quantidade = $_POST['quantidade'];
         }
 
         if(isset($_POST['idioma'])){
-            $titulo = $_POST['idioma'];
+            $idioma = $_POST['idioma'];
         }
 
         if(isset($_POST['data_lancamento'])){
-            $titulo = $_POST['data_lancamento'];
+            $data_lancamento = $_POST['data_lancamento'];
         }
 
         $con = new mysqli("localhost","root","","filmes");
@@ -34,18 +34,17 @@
             exit;
         }
         else{
-            $sql = "insert into filmes(titulo,sinopse,idioma,data_lancamento,quantidade) values(?,?,?,?,?);";
+            $sql = "insert into filmes(titulo,sinopse,quantidade,idioma,data_lancamento) values(?,?,?,?,?);";
 
-            if($stm!=false){
-                $stm->bind_param("ssssi",$titulo,$sinopse,$idioma,$data_lancamento,$quantidade);
+            $stm = $con->prepare($sql);
+
+            if($stm !=false){
+                $stm->bind_param("ssiss",$titulo,$sinopse,$quantidade,$idioma,$data_lancamento);
                 $stm->execute();
                 $stm->close();
                 echo '<script>alert("Filme alterado com sucesso!!");</script>';
                 echo "Aguarde um momento. A reencaminhar página";
                 header("refresh:5; url=index.php");
-            }
-            else{
-
             }
         }
     }
