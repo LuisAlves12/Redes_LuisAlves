@@ -61,7 +61,9 @@
     echo '<a href="filmes_edit.php?filme='.$livro['id_filme']. '">Editar Filme</a>';
     echo '<br>';
     echo '<a href="filmes_delete.php?filme='.$livro['id_filme']. '">Eliminar Filme</a>';
-
+    ?>
+    <a href="login.php">Login</a>
+    <a href="register.php">Register</a>
 ?>
 </body>
 </html>
