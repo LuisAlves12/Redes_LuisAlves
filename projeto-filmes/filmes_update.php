@@ -1,4 +1,5 @@
 <?php
+$idFilme=$_GET['filme'];
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $titulo = "";
         $sinopse = "";
@@ -34,12 +35,11 @@
             exit;
         }
         else{
-            $sql = "insert into filmes(titulo,sinopse,quantidade,idioma,data_lancamento) values(?,?,?,?,?);";
+            $sql = "update filmes set titulo=?,sinopse=?,idioma=?,data_lancamento=?,quantidade=? where id_filme=?";
 
-            $stm = $con->prepare($sql);
-
-            if($stm !=false){
-                $stm->bind_param("ssiss",$titulo,$sinopse,$quantidade,$idioma,$data_lancamento);
+            $stm=$con->prepare($sql);
+            if($stm!=false){
+                $stm->bind_param("ssssii",$titulo,$sinopse,$idioma,$data_lancamento,$quantidade,$idFilme);
                 $stm->execute();
                 $stm->close();
                 echo '<script>alert("Filme alterado com sucesso!!");</script>';

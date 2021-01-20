@@ -59,6 +59,9 @@
         echo '<h2>Parece que o filme selecionado não existe. <br>Confirme a sua seleção.</h2>';
     }
     echo '<a href="filmes_edit.php?filme='.$livro['id_filme']. '">Editar Filme</a>';
+    echo '<br>';
+    echo '<a href="filmes_delete.php?filme='.$livro['id_filme']. '">Eliminar Filme</a>';
+
 ?>
 </body>
 </html>
