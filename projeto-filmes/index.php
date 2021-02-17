@@ -43,7 +43,8 @@
         <a href="register.php">Register</a>
         <a href="listautilizadores.php">Lista de utilizadores</a>
     
-        <br>
+        <br><br>
+        <a href="atores_index.php">Atores</a>
     </body>
 </html>
 
