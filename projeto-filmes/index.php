@@ -45,6 +45,7 @@
     
         <br><br>
         <a href="atores_index.php">Atores</a>
+        <a href="realizadores_index.php">Realizadores</a>
     </body>
 </html>
 
