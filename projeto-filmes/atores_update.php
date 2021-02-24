@@ -1,4 +1,5 @@
 <?php
+include "css.php";
 $idAtor=$_GET['ator'];
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $nome = "";
@@ -30,7 +31,7 @@ $idAtor=$_GET['ator'];
 
             $stm=$con->prepare($sql);
             if($stm!=false){
-                $stm->bind_param("ssssi",$nome,$data_nascimento,$nacionalidade,$idAtor);
+                $stm->bind_param("sssi",$nome,$data_nascimento,$nacionalidade,$idAtor);
                 $stm->execute();
                 $stm->close();
                 echo '<script>alert("Ator alterado com sucesso!!");</script>';

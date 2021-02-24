@@ -1,8 +1,5 @@
 <?php
-if(!isset($_SESSION['login'])){
-    $_SESSION['login']="incorreto";
-}
-if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
+include "css.php";
 if($_SERVER['REQUEST_METHOD']=="GET"){
     if(isset($_GET['ator']) || is_numeric($_GET['ator'])){
         $idAtor = $_GET['ator'];
@@ -12,28 +9,28 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             exit();
         }
         else{
-        $sql = "delete from atores where id_ator=?";
-        $stm = $con->prepare($sql);
-        if($stm!=false){
-            $stm->bind_param("i",$idAtor);
-            $stm->execute();
-            $stm->close();
-            echo ("<script>alert('Ator eliminado com sucesso');</script>");
-            echo 'Aguarde um momento. A reencaminar página';
-            header("refresh:5; url=atores_index.php");
-        }
-        else{
-            echo '<br>';
-            echo $con->error;
-            echo '<br>';
-            echo "Aguarde um momento. A reencaminhar página";
-            header("refresh:5; url=atores_index.php");
+            $sql = "delete from atores where id_ator=?";
+            $stm = $con->prepare($sql);
+            if($stm!=false){
+                $stm->bind_param("i",$idAtor);
+                $stm->execute();
+                $stm->close();
+                echo ("<script>alert('Ator eliminado com sucesso');</script>");
+                echo 'Aguarde um momento. A reencaminar página';
+                header("refresh:5; url=atores_index.php");
+            }
+            else{
+                echo '<br>';
+                echo $con->error;
+                echo '<br>';
+                echo "Aguarde um momento. A reencaminhar página";
+                header("refresh:5; url=atores_index.php");
+            }
         }
     }
- }
- else{
-    echo ("<h1>Houve um erro ao processar o seu pedido.<br>Dentro de segundos será reencaminhado!</h1>");
-    header("refresh:5; url=atores_index.php");
+    else{
+        echo ("<h1>Houve um erro ao processar o seu pedido.<br>Dentro de segundos será reencaminhado!</h1>");
+        header("refresh:5; url=atores_index.php");
     }
 }
 else{
@@ -41,8 +38,4 @@ else{
     header("refresh:5; url=atores_index.php");
     }
 
-}
-else{
-    echo 'Para entrar nesta página necessita de efetuar <a href="login.php">Login</a>';
-    header('refresh:2;url=atores_index.php');
-}
+

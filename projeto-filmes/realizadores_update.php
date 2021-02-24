@@ -1,4 +1,5 @@
 <?php
+include "css.php";
 $idRealizador=$_GET['realizador'];
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $nome = "";
@@ -30,7 +31,7 @@ $idRealizador=$_GET['realizador'];
 
             $stm=$con->prepare($sql);
             if($stm!=false){
-                $stm->bind_param("ssssi",$nome,$data_nascimento,$nacionalidade,$idRealizador);
+                $stm->bind_param("sssi",$nome,$data_nascimento,$nacionalidade,$idRealizador);
                 $stm->execute();
                 $stm->close();
                 echo '<script>alert("Realizador alterado com sucesso!!");</script>';

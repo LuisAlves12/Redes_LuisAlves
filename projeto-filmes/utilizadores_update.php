@@ -1,4 +1,5 @@
 <?php
+include "css.php";
     $idUser=$_GET['user'];
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $user = "";

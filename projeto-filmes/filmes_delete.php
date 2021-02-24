@@ -1,8 +1,5 @@
 <?php
-if(!isset($_SESSION['login'])){
-    $_SESSION['login']="incorreto";
-}
-if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
+include "css.php";
 if($_SERVER['REQUEST_METHOD']=="GET"){
     if(isset($_GET['filme']) || is_numeric($_GET['filme'])){
         $idFilme = $_GET['filme'];
@@ -18,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             $stm->bind_param("i",$idFilme);
             $stm->execute();
             $stm->close();
-            echo ("<script>alert('Livro eliminado com sucesso');</script>");
+            echo ("<script>alert('Filme eliminado com sucesso');</script>");
             echo 'Aguarde um momento. A reencaminar página';
             header("refresh:5; url=index.php");
         }
@@ -35,14 +32,4 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
     echo ("<h1>Houve um erro ao processar o seu pedido.<br>Dentro de segundos será reencaminhado!</h1>");
     header("refresh:5; url=index.php");
     }
-}
-else{
-    echo ("<h1>Houve um erro ao processar o seu pedido.<br>Dentro de segundos será reencaminhado!</h1>");
-    header("refresh:5; url=index.php");
-    }
-
-}
-else{
-    echo 'Para entrar nesta página necessita de efetuar <a href="login.php">Login</a>';
-    header('refresh:2;url=login.php');
 }

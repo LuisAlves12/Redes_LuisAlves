@@ -1,10 +1,11 @@
 <?php
+include "css.php";
+session_start();
 if(!isset($_SESSION['login'])){
     $_SESSION['login']="incorreto";
 }
-if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
-
-    if($_SERVER['REQUEST_METHOD']=="GET"){
+if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
+if($_SERVER['REQUEST_METHOD']=="GET"){
 
     if(isset($_GET['ator']) && is_numeric($_GET['ator'])){
         $idAtor = $_GET['ator'];
@@ -21,7 +22,7 @@ if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
             $stm->bind_param("i",$idAtor);
             $stm->execute();
             $res=$stm->get_result();
-            $livro = $res->fetch_assoc();
+            $ator = $res->fetch_assoc();
             $stm->close();
         }
     
@@ -29,15 +30,15 @@ if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+    <meta charset="ISO-8859-1">
     <title>Editar ator</title>
 </head>
-<body>
-    <h1>Editar ator</h1>
-    <form action="filmes_update.php?filme=<?php echo $livro['id_ator']; ?>" method="post">
-        <label>Nome</label><input type="text" name="nome" required value="<?php echo $livro['nome'];?>"><br>
-        <label>nacionalidade</label><input type="text" name="nacionalidade" required value="<?php echo $livro['nacionalidade'];?>"><br>
-        <label>Data_Nascimento</label><input type="date" name="data_nascimento" required value="<?php echo $livro['data_nascimento'];?>"><br>
+<body style="color:white;background-color:black">
+    <h1 style="text-align:center;">Editar ator</h1>
+    <form action="atores_update.php?ator=<?php echo $ator['id_ator']; ?>" method="post">
+        <label>Nome</label><input type="text" name="nome" required value="<?php echo $ator['nome'];?>"><br>
+        <label>nacionalidade</label><input type="text" name="nacionalidade" required value="<?php echo $ator['nacionalidade'];?>"><br>
+        <label>Data_Nascimento</label><input type="date" name="data_nascimento" required value="<?php echo $ator['data_nascimento'];?>"><br>
         <input type="submit" name="enviar"><br>
     </form>
 </body>
@@ -48,9 +49,22 @@ if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
      header("refresh:5; url=index.php");
  }
 }
-
-}
-else{
-    echo 'Para entrar nesta página necessita de efetuar <a href="login.php">Login</a>';
-    header('refresh:2;url=login.php');
-}
+echo '<br>';
+echo '<a href="atores_delete.php?ator='.$ator['id_ator'].'" style="color:white">Eliminar Ator</a>';
+?>
+<?php
+    }
+    else{
+        echo "Precisa estar logado.<br>";
+        echo "A ser redirecionado para a pagina de login";
+        header("refresh:5; url=login.php");
+    }
+?>
+<br><br>
+        <a href="index.php" style="color:white">Filmes</a>
+        <a href="atores_index.php" style="color:white">Atores</a>
+        <a href="realizadores_index.php" style="color:white">Realizadores</a>
+<br> <br>
+<a href="login.php" style="color:white">Login</a>
+<a href="register.php" style="color:white">Register</a>
+<a href="listautilizadores.php" style="color:white">ListadeUtilizadores</a>

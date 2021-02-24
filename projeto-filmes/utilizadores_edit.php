@@ -1,4 +1,5 @@
 <?php
+include "css.php";
 if($_SERVER['REQUEST_METHOD']=="GET"){
 
     if(isset($_GET['user']) && is_numeric($_GET['user'])){
@@ -27,8 +28,8 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
     <meta charset="ISO-8859-1">
     <title>Editar User</title>
 </head>
-<body>
-    <h1>Editar User</h1>
+<body style="color:white;background-color:black">
+    <h1 style="text-align:center;">Editar User</h1>
     <form action='utilizadores_update.php?user=<?php echo $idUser ?>' method="post">
         <label>User</label><input type="text" name="user_name" required><br>
         <label>Email</label><input type="text" name="email" required><br>

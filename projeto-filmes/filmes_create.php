@@ -1,4 +1,5 @@
 <?php
+include "css.php";
     session_start();
     if(!isset($_SESSION['login'])){
         $_SESSION['login']="incorreto";
@@ -66,8 +67,8 @@
     <meta charset="ISO-8859-1">
     <title>Adicionar filmes</title>
     </head>
-    <body>
-    <h1>Adicionar filmes</h1>
+    <body style="color:white;background-color:black">
+    <h1 style="text-align:center;">Adicionar filmes</h1>
     <form action="filmes_create.php" method="post">
     <label>Titulo</label><input type="text" name="titulo" required><br>
     <label>Sinopse</label><input type="text" name="sinopse"><br>

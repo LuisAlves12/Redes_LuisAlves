@@ -1,4 +1,10 @@
 <?php
+include "css.php";
+session_start();
+if(!isset($_SESSION['login'])){
+    $_SESSION['login']="incorreto";
+}
+if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $nome="";
             $nacionalidade="";
@@ -54,8 +60,8 @@
     <meta charset="ISO-8859-1">
     <title>Adicionar Atores</title>
     </head>
-    <body>
-    <h1>Adicionar Atores</h1>
+    <body style="color:white;background-color:black">
+    <h1 style="text-align:center;">Adicionar Atores</h1>
     <form action="atores_create.php" method="post">
     <label>Nome</label><input type="text" name="nome" required><br>
     <label>Nacionalidade</label><input type="text" name="nacionalidade"><br>
@@ -66,7 +72,17 @@
     </html>
     <?php
         };
-    
+    }
+    else{
+        echo "Precisa estar logado.<br>";
+        echo "A ser redirecionado para a pagina de login";
+        header("refresh:5; url=login.php");
+    }
+?>
+<br><br>
+        <a href="index.php" style="color:white">Filmes</a>
+        <a href="atores_index.php" style="color:white">Atores</a>
+        <a href="realizadores_index.php" style="color:white">Realizadores</a>
     
     
     

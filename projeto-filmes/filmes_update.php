@@ -1,4 +1,5 @@
 <?php
+include "css.php";
 $idFilme=$_GET['filme'];
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $titulo = "";
