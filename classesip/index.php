@@ -1,3 +1,4 @@
+<?php include "css.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +9,10 @@
 	<h2 style="text-align:center;">Classes IP</h2>
 	<h4>Insira um IP para verificar</h4>
 	<form action="classe.php">
-		<input type="text" name="classe_a">
-		<input type="text" name="classe_b">
-		<input type="text" name="classe_c">
-		<input type="text" name="classe_d"><br><br>
+		<input type="text" name="a">
+		<input type="text" name="b">
+		<input type="text" name="c">
+		<input type="text" name="d"><br><br>
 		<input type="submit" value="Verificar">
 	</form>
 	<br>

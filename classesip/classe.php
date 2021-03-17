@@ -1,3 +1,4 @@
+<?php include "css.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,40 +7,19 @@
 </head>
 <body style="color:white;background-color:black;">
 <?php 
-	$classe_a=$_GET['classe_a'];
-	$classe_b=$_GET['classe_b'];
-    $classe_c=$_GET['classe_c'];
-    $classe_d=$_GET['classe_d'];
-
-    if($classe_a > 0 && $classe_a < 255){
-        $a = $classe_a; 
-
-        if($classe_b > 0 && $classe_b < 255){
-            $b = $classe_b;
-
-            if($classe_c > 0 && $classe_c < 255){
-                $c = $classe_c; 
-
-                if($classe_d > 0 && $classe_d < 255){
-                    $d = $classe_d; 
-                }
-                else{
-                    echo 'Volte a página inicial';
-                }
-            }
-            else{
-                echo 'Volte a página inicial';
-            } 
-        }
-        else{
-            echo 'Volte a página inicial';
-        }
+	if($_GET['a'] <= 255 && $_GET['b'] <= 255 && $_GET['c'] <= 255 && $_GET['d'] <= 255 && $_GET['a'] >= 0 && $_GET['b'] >= 0 && $_GET['c'] >= 0 && $_GET['d'] >= 0){
+        $endereço = array(
+            'a' => $_GET['a'],
+            'b' => $_GET['b'],
+            'c' => $_GET['c'],
+            'd' => $_GET['d']
+        );
     }
     else{
-        echo 'Volte a página inicial';
+        echo "Ip Inválido";
+        return;
     }
-
-
+    
 
 
     echo '<br><br>';
