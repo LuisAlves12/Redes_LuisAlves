@@ -6,27 +6,23 @@
 	<title>Atividade 3</title>
 </head>
 <body style="color:white;background-color:black;">
-	<h2 style="text-align:center;">Classes IP</h2>
-	<h4>Insira um IP para verificar</h4>
-	<form action="classe.php">
-		<input type="text" name="a">
-		<input type="text" name="b">
-		<input type="text" name="c">
-		<input type="text" name="d"><br><br>
-		<input type="submit" value="Verificar">
-	</form>
-	<br>
-	<h2 style="text-align:center;">Protocolos</h2>
-	<h4>Seleciona um protocolo</h4>
-	<form action="protocolo.php">
-  		<select name="tipoprotocolo" id="cars">
-		    <option value="DNS">DNS</option>
-		    <option value="FTP">FTP</option>
-		    <option value="HTTP">HTTP</option>
-		    <option value="IP">IP</option>
-  		</select>
-  		<br><br>
-  		<input type="submit" value="enviar">
-	</form>
+	<h2 style="text-align:center;">Atividade 3</h2>
+	<table>
+		    <tr>
+                <td style="color:black">----------------------------------------</td>
+                <td><img src="imagem1.jpg" height="200" width="300"></td>
+                <td><img src="imagem2.jpg" height="200" width="300"></td>
+                <td><img src="imagem3.jpg" height="200" width="300"></td>
+		    </tr>
+	    </table>
+        <br><br><br><br>
+        <table>
+		    <tr>
+                <td style="color:black">-----------------------------------------------------</td>
+                <td><button style='width: 200px'><a href="classe.php" style="color:black">Classes</a></button></td>
+                <td style="color:black">-----------------------------------------</td>
+                <td><button style='width: 200px'><a href="protocolo.php" style="color:black">Protocolos</a></button></td>
+		    </tr>
+	    </table>
 </body>
 </html>

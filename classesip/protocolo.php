@@ -6,34 +6,19 @@
 	<title>Atividade 3</title>
 </head>
 <body style="color:white;background-color:black;">
-<?php 
-	$tipoprotocolo=$_GET['tipoprotocolo'];
-	if($tipoprotocolo=="DNS"){
-		echo "<h1 style='text-align:center;'>DNS</h1>";
-		echo"DNS é o protocolo utilizado para associar a cada endereço IP um nome,
-        pois desta forma é mais fácil de ser memorizado pelos utilizadores. 
-        Por exemplo, www.portoeditora.pt,  poderá,corresponder ao endereço 
-        IP 192.16831.32.";
-	}
-	else if($tipoprotocolo=="FTP"){
-		echo "<h1 style='text-align:center;'>FTP</h1>";
-		echo"FTP é o protocolo utilizado para a transferência de ficheiros. 
-        Serve para fazermos o download ou upload de ficheiros de ou para 
-        servidores FTP, aquele cujo endereço começa por ftp://.";
-	}
-	else if($tipoprotocolo=="HTTP"){
-		echo "<h1 style='text-align:center;'>HTTP</h1>";
-		echo"HTTP é o protocolo utilizado para controlar a comunicação entre o servidor
-        de Internet e o browser, ou seja, serve de suporte à World Wide Web. 
-        É o que nos permite escrever na Barra de Endereços do nosso browser
-        um endereço URL [Uniform Resource Locator] e rapidament receber a página 
-        Web correspondente.";
-	}
-	else if($tipoprotocolo=="IP"){
-		echo "<h1 style='text-align:center;'>IP</h1>";
-		echo" IP é o protocolo responsável por estabelecer a ligação entre os 
-        computadores emissor e recetor para que a informação não se perca na rede.";
-	}
-    echo '<br><br>';
-	echo"<a href='index.php'>Pagina Inicial</a>";
-?>
+	<h2 style="text-align:center;">Protocolos</h2>
+	<h4>Seleciona um protocolo</h4>
+	<form action="processa_protocolo.php">
+  		<select name="tipoprotocolo" id="cars">
+		    <option value="DNS">DNS</option>
+		    <option value="FTP">FTP</option>
+		    <option value="HTTP">HTTP</option>
+		    <option value="IP">IP</option>
+  		</select>
+  		<br><br>
+  		<input type="submit" value="enviar">
+	</form>
+	<br><br>
+	<a href='index.php'>Pagina Inicial</a>
+</body>
+</html>
